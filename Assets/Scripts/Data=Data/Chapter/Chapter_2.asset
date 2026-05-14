@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d343deaddcfaa4ea64ef73702fbe3d, type: 3}
+  m_Name: Chapter_2
+  m_EditorClassIdentifier: Assembly-CSharp::ChapterData
+  chapterID: 2
+  chapterTitle: "B\xF6l\xFCm 2"
+  chapterDescription: "2.test b\xF6l\xFCm\xFC"
+  startNodeID: 0
+  storyNodes:
+  - nodeID: 0
+    speakerName: "\xD6\u011Frenci"
+    dialogueText: "Bug\xFCn devlerimi yapamad\u0131mm"
+    isChoiceNode: 0
+    nextNodeID: 1
+    isEndingNode: 0
+    choices: []
+  - nodeID: 1
+    speakerName: "\xD6\u011Frenci"
+    dialogueText: Bu konuda napabilrimm
+    isChoiceNode: 1
+    nextNodeID: 1
+    isEndingNode: 0
+    choices:
+    - choiceText: "Koypa \xE7ekip \xF6devi tamamlamak"
+      nextNodeID: 3
+      badgeName: 
+    - choiceText: "\xD6devi k\xF6pe\u011Fim yedi demek"
+      nextNodeID: 4
+      badgeName: 
+  - nodeID: 3
+    speakerName: "\xD6\u011Fretmen"
+    dialogueText: "Kopya \xE7ekmek yanl\u0131\u015F bir davran\u0131\u015Ft\u0131r."
+    isChoiceNode: 0
+    nextNodeID: 1
+    isEndingNode: 1
+    choices:
+    - choiceText: "Koypa \xE7ekip \xF6devi tamamlamak"
+      nextNodeID: 3
+      badgeName: 
+    - choiceText: "Koypa \xE7ekip \xF6devi tamamlamak"
+      nextNodeID: 3
+      badgeName: 
+  - nodeID: 4
+    speakerName: "\xD6\u011Fretmen"
+    dialogueText: "Yalan s\xF6ylemek yanl\u0131\u015F bir davran\u0131\u015Ft\u0131r."
+    isChoiceNode: 0
+    nextNodeID: 1
+    isEndingNode: 1
+    choices: []
