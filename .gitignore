@@ -2,6 +2,12 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
+<<<<<<< HEAD
+=======
+# Recommended: add any editor/OS/tool-specific ignore rules from the Global/ templates as needed.
+# See: https://github.com/github/gitignore/tree/main/Global
+#
+>>>>>>> c6d077cc87a7e09c52045a8a14c0d12271444ddc
 .utmp/
 /[Ll]ibrary/
 /[Tt]emp/
@@ -43,6 +49,10 @@ ExportedObj/
 *.csproj
 *.unityproj
 *.sln
+<<<<<<< HEAD
+=======
+*.slnx
+>>>>>>> c6d077cc87a7e09c52045a8a14c0d12271444ddc
 *.suo
 *.tmp
 *.user
@@ -97,3 +107,9 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+<<<<<<< HEAD
+=======
+
+# Auto-generated cache in Assets folder
+/[Aa]ssets/[Ss]ceneDependencyCache*
+>>>>>>> c6d077cc87a7e09c52045a8a14c0d12271444ddc

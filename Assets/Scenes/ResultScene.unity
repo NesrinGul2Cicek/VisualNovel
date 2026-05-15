@@ -882,8 +882,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a712d2f6fcebe34faa63a2b30525ae0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endingTitleText: {fileID: 0}
-  endingDescriptionText: {fileID: 0}
+  endingTitleText: {fileID: 2026276365}
+  endingDescriptionText: {fileID: 233860755}
   badgeText: {fileID: 1269250568}
   mainSceneName: MainScene
   storyController: {fileID: 0}

@@ -12,6 +12,8 @@ public class NovelLoader : MonoBehaviour
             return;
         }
 
+        Debug.Log("SelectedChapterID = " + GameManager.Instance.SelectedChapterID);
+
         int id = GameManager.Instance.SelectedChapterID;
 
         if (database == null)

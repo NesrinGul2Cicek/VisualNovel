@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ChapterStone : MonoBehaviour
 {
@@ -18,5 +19,11 @@ public class ChapterStone : MonoBehaviour
         {
             UIManager.Instance.ClosePanel();
         }
+    }
+
+    public void SelectChapter()
+    {
+        GameManager.Instance.SetSelectedChapter(chapter.chapterID);
+        SceneManager.LoadScene("NovelScene");
     }
 }

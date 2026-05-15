@@ -42,7 +42,8 @@ public class UIManager : MonoBehaviour
         if (!panel.activeSelf) return;
         if (targetChapter == null) return;
 
-        GameData.currentChapter = targetChapter;
+        GameManager.Instance.SetSelectedChapter(targetChapter.chapterID);
+
         SceneManager.LoadScene("NovelScene");
     }
 }

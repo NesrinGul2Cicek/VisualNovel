@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class ChapterTrigger : MonoBehaviour
 {
@@ -10,13 +11,25 @@ public class ChapterTrigger : MonoBehaviour
     public string sceneToLoad = "NovelScene";
 
     [Header("Interaction")]
-    public KeyCode interactKey = KeyCode.E;
+    public InputActionReference interactAction;
 
     [Header("UI")]
     public GameObject promptPanel;
     public TMP_Text promptText;
 
     private bool playerInRange = false;
+
+    private void OnEnable()
+    {
+        if (interactAction != null)
+            interactAction.action.Enable();
+    }
+
+    private void OnDisable()
+    {
+        if (interactAction != null)
+            interactAction.action.Disable();
+    }
 
     private void Start()
     {
@@ -26,7 +39,7 @@ public class ChapterTrigger : MonoBehaviour
 
     private void Update()
     {
-        if (playerInRange && Input.GetKeyDown(interactKey))
+        if (playerInRange && interactAction != null && interactAction.action.WasPressedThisFrame())
         {
             EnterChapter();
         }
@@ -48,7 +61,7 @@ public class ChapterTrigger : MonoBehaviour
                 promptPanel.SetActive(true);
 
             if (promptText != null)
-                promptText.text = chapterTitle + "\nE ile baþlat";
+                promptText.text = chapterTitle + "\nBas";
         }
     }
 
