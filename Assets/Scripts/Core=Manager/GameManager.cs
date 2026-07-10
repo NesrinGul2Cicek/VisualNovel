@@ -6,6 +6,10 @@ public class GameManager : MonoBehaviour
 
     public int SelectedChapterID = 1;
 
+    // Sonuç ekraný için
+    public string EndingTitle;
+    public string EndingDescription;
+
     private void Awake()
     {
         if (Instance == null)

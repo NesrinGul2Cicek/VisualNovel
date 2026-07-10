@@ -5,11 +5,24 @@ public class SaveData : MonoBehaviour
     private const string SAVE_KEY = "PROGRESS";
 
     public ChapterProgress[] chapters;
+    public static SaveData Instance;
 
     private void Awake()
     {
         Load();
+
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
     }
+
 
     // Bölüm tamamlanınca çağır
     public void CompleteChapter(int index)

@@ -148,13 +148,17 @@ public class NovelUIManager : MonoBehaviour
 
         if (currentNode.isEndingNode)
         {
-            if (GameManager.Instance != null)
+            if (storyController != null)
             {
                 storyController.SetEnding(
                     currentNode.speakerName,
                     currentNode.dialogueText,
                     currentNode.nodeID
                 );
+            }
+            else
+            {
+                Debug.LogError("StoryController atanmadı!");
             }
 
             SceneManager.LoadScene(resultSceneName);
