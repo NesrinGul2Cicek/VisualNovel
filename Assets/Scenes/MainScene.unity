@@ -1018,7 +1018,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "gjbolsrkfjvhgjjjhbgghnjfjhnvbgjfkldskfmjgnbmfk\xF6dl\xF6s\xF6kmdjnfvgbvm\xF6\n"
+  m_text: "B\xF6l\xFCme girmek i\xE7in \"Enter\" tu\u015Funa bas\u0131n\u0131z."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -8,10 +8,14 @@ public class BootLoader : MonoBehaviour
 
     [Header("Managers")]
     [SerializeField] private GameObject gameManagerPrefab;
+    [SerializeField] private GameObject storyControllerPrefab;
+    [SerializeField] private GameObject saveDataPrefab;
 
     private void Awake()
     {
         EnsureGameManagerExists();
+        EnsureStoryControllerExists();
+        EnsureSaveDataExists();
     }
 
     private void Start()
@@ -31,5 +35,33 @@ public class BootLoader : MonoBehaviour
         }
 
         Instantiate(gameManagerPrefab);
+    }
+
+    private void EnsureStoryControllerExists()
+    {
+        if (StoryController.Instance != null)
+            return;
+
+        if (storyControllerPrefab == null)
+        {
+            Debug.LogError("BootLoader: StoryController prefab atanmadý.");
+            return;
+        }
+
+        Instantiate(storyControllerPrefab);
+    }
+
+    private void EnsureSaveDataExists()
+    {
+        if (SaveData.Instance != null)
+            return;
+
+        if (saveDataPrefab == null)
+        {
+            Debug.LogError("BootLoader: SaveData prefab atanmadý.");
+            return;
+        }
+
+        Instantiate(saveDataPrefab);
     }
 }

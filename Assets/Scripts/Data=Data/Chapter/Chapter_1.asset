@@ -19,7 +19,8 @@ MonoBehaviour:
   storyNodes:
   - nodeID: 0
     speakerName: "Anlat\u0131c\u0131"
-    dialogueText: "Okul yolunda \xFCzg\xFCn bir arkada\u015F g\xF6rd\xFCn."
+    dialogueText: "Okulun kap\u0131s\u0131ndan i\xE7eri girdin.Biraz uzakta oturmu\u015F,kollar\u0131n\u0131
+      kendine sarm\u0131\u015F birini g\xF6r\xFCyoruz."
     isChoiceNode: 0
     nextNodeID: 1
     isEndingNode: 0
@@ -31,22 +32,98 @@ MonoBehaviour:
     nextNodeID: 0
     isEndingNode: 0
     choices:
-    - choiceText: "yan\u0131na gitmek"
+    - choiceText: "Yan\u0131na gidip konu\u015Fmak"
       nextNodeID: 2
       badgeName: "Yard\u0131msever"
-    - choiceText: Yoluna devam et
+    - choiceText: "Durumu g\xF6rmemi\u015F gibi yapmak"
       nextNodeID: 3
       badgeName: 
   - nodeID: 2
-    speakerName: "Sonu\xE7"
-    dialogueText: "Arkada\u015F\u0131na destek oldun."
+    speakerName: "Anlat\u0131c\u0131"
+    dialogueText: "Yakla\u015Ft\u0131\u011F\u0131nda  s\u0131n\u0131f arkada\u015F\u0131n\u0131n
+      a\u011Flad\u0131\u011F\u0131n\u0131 g\xF6r\xFCyorsun. "
     isChoiceNode: 0
+    nextNodeID: 3
+    isEndingNode: 0
+    choices: []
+  - nodeID: 3
+    speakerName: "Anlat\u0131c\u0131"
+    dialogueText: "Arkada\u015F\u0131m\u0131z\u0131 a\u011Flarken g\xF6rmek bizde
+      ne hissettirdi"
+    isChoiceNode: 1
+    nextNodeID: 0
+    isEndingNode: 0
+    choices:
+    - choiceText: "Arkada\u015F\u0131mla konu\u015Fup yan\u0131nda olmak istiyorum."
+      nextNodeID: 7
+      badgeName: 
+    - choiceText: "Arkada\u015F\u0131mla nas\u0131l konu\u015Faca\u011F\u0131m\u0131
+        bilemiyorum "
+      nextNodeID: 4
+      badgeName: 
+  - nodeID: 4
+    speakerName: "Anlat\u0131c\u0131"
+    dialogueText: "B\xF6yle durumlarda sar\u0131lmakta arkada\u015F\u0131na yard\u0131mc\u0131
+      olabilir.Yard\u0131m etmek istersen bu ger\xE7ekten cesur bir davran\u0131\u015F
+      olur."
+    isChoiceNode: 0
+    nextNodeID: 5
+    isEndingNode: 0
+    choices: []
+  - nodeID: 5
+    speakerName: "Anlat\u0131c\u0131"
+    dialogueText: 
+    isChoiceNode: 1
+    nextNodeID: 0
+    isEndingNode: 0
+    choices:
+    - choiceText: "Yan\u0131na gidece\u011Fim"
+      nextNodeID: 7
+      badgeName: Cesaret Rozeti
+    - choiceText: "Kendimi haz\u0131r hissetmiyorum."
+      nextNodeID: 6
+      badgeName: 
+  - nodeID: 6
+    speakerName: "Anlat\u0131c\u0131"
+    dialogueText: "Haz\u0131r hissedersen bu b\xF6l\xFCm\xFC yeniden oynayabiliriz."
+    isChoiceNode: 1
     nextNodeID: 0
     isEndingNode: 1
     choices: []
-  - nodeID: 3
-    speakerName: "Sonu\xE7"
-    dialogueText: "Yard\u0131m etmeden gittin"
+  - nodeID: 7
+    speakerName: "Anlat\u0131c\u0131"
+    dialogueText: "S\u0131n\u0131f arkada\u015F\u0131m\u0131z\u0131n yan\u0131na
+      gideriz ve ona neden \xFCzg\xFCnn oldu\u011Funu sorar\u0131z."
+    isChoiceNode: 0
+    nextNodeID: 8
+    isEndingNode: 0
+    choices: []
+  - nodeID: 8
+    speakerName: "Anlat\u0131c\u0131"
+    dialogueText: "Yaln\u0131z hissetti\u011Fini \xE7\xFCnk\xFC arkada\u015F\u0131n\u0131n
+      ba\u015Fka bir okula nakil ald\u0131rd\u0131\u011F\u0131n\u0131 s\xF6yler."
+    isChoiceNode: 0
+    nextNodeID: 9
+    isEndingNode: 0
+    choices: []
+  - nodeID: 9
+    speakerName: "Anlat\u0131c\u0131"
+    dialogueText: 
+    isChoiceNode: 1
+    nextNodeID: 0
+    isEndingNode: 1
+    choices:
+    - choiceText: "Bir arkada\u015F\u0131m\u0131z\u0131n gitmesi \xFCz\xFCc\xFCd\xFCr.\u0130stersen
+        arkada\u015F olabiliriz "
+      nextNodeID: 10
+      badgeName: "Arkada\u015Fl\u0131k rozeti"
+    - choiceText: "Bir arkada\u015F\u0131m\u0131z\u0131n gitmesi \xFCz\xFCc\xFCd\xFCr.\u0130stersen
+        sar\u0131lmak iyi gelebilir"
+      nextNodeID: 10
+      badgeName: 
+  - nodeID: 10
+    speakerName: "Anlat\u0131c\u0131"
+    dialogueText: "Bu b\xF6l\xFCm\xFC tamamlad\u0131n"
     isChoiceNode: 0
     nextNodeID: 0
     isEndingNode: 1

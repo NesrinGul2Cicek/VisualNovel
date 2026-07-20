@@ -28,8 +28,10 @@ public class NovelUIManager : MonoBehaviour
     private StoryNode currentNode;
     private bool waitingForChoice = false;
 
-    public StoryController storyController;
-    public SaveData saveData;
+    // NOT: storyController ve saveData artık sahneler arası kalıcı
+    // singleton'lar üzerinden erişiliyor (StoryController.Instance,
+    // SaveData.Instance). Inspector'dan sürükleme YAPMANIZA gerek yok,
+    // eski dragged referanslar sahne değişince kayboluyordu.
 
     private void Start()
     {
@@ -38,11 +40,7 @@ public class NovelUIManager : MonoBehaviour
 
         SetupChoiceButtons();
         LoadSelectedChapter();
-
-      
     }
-
-    // ❌ Update KALDIRILDI
 
     // ✔ YENİ INPUT SYSTEM
     public void OnContinue(InputAction.CallbackContext context)
@@ -148,9 +146,9 @@ public class NovelUIManager : MonoBehaviour
 
         if (currentNode.isEndingNode)
         {
-            if (storyController != null)
+            if (StoryController.Instance != null)
             {
-                storyController.SetEnding(
+                StoryController.Instance.SetEnding(
                     currentNode.speakerName,
                     currentNode.dialogueText,
                     currentNode.nodeID
@@ -158,7 +156,19 @@ public class NovelUIManager : MonoBehaviour
             }
             else
             {
-                Debug.LogError("StoryController atanmadı!");
+                Debug.LogError("StoryController.Instance bulunamadı! Sahnede kalıcı bir StoryController nesnesi olduğundan emin olun.");
+            }
+
+            // Bölümü "tamamlandı" olarak işaretle — rozete dokunmuyor,
+            // rozet zaten SelectChoice() içinde koşullu kazandırılıyor.
+            if (SaveData.Instance != null && GameManager.Instance != null)
+            {
+                int chapterID = GameManager.Instance.SelectedChapterID;
+                SaveData.Instance.MarkChapterCompleted(chapterID);
+            }
+            else
+            {
+                Debug.LogError("SaveData.Instance veya GameManager.Instance bulunamadı!");
             }
 
             SceneManager.LoadScene(resultSceneName);
@@ -225,9 +235,9 @@ public class NovelUIManager : MonoBehaviour
 
         ChoiceData selectedChoice = currentNode.choices[choiceIndex];
 
-        if (saveData != null && !string.IsNullOrEmpty(selectedChoice.badgeName))
+        if (SaveData.Instance != null && !string.IsNullOrEmpty(selectedChoice.badgeName))
         {
-            saveData.EarnBadge(GameManager.Instance.SelectedChapterID);
+            SaveData.Instance.EarnBadge(GameManager.Instance.SelectedChapterID);
         }
 
         if (choicePanel != null)
