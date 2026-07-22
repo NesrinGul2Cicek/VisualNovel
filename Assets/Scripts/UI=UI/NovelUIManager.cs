@@ -134,7 +134,7 @@ public class NovelUIManager : MonoBehaviour
             continueHint.gameObject.SetActive(!node.isEndingNode);
     }
 
-    private void ContinueStory()
+    public void ContinueStory()
     {
         Debug.Log("ContinueStory ÇALIŞTI");
 
@@ -254,12 +254,5 @@ public class NovelUIManager : MonoBehaviour
         LoadNode(selectedChoice.nextNodeID);
     }
 
-    void Update()
-    {
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
-        {
-            Debug.Log("SPACE WORKS");
-            ContinueStory();
-        }
-    }
+    
 }

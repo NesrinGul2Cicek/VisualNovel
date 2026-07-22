@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 movement;
 
+    public Vector2 Movement => movement;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -28,6 +30,19 @@ public class PlayerController : MonoBehaviour
         {
             UIManager.Instance.TryInteract();
         }
+    }
+
+    // MOVE (Mobile on-screen joystick)
+    public void SetVirtualMove(Vector2 direction)
+    {
+        movement = direction;
+    }
+
+    // INTERACT (Mobile on-screen button)
+    public void MobileInteractPressed()
+    {
+        if (UIManager.Instance != null)
+            UIManager.Instance.TryInteract();
     }
 
     private void FixedUpdate()
